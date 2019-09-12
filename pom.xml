@@ -59,7 +59,7 @@
             <version>2.0.0</version>
         </dependency>
 
-        <!-- 3. Servlet web -->
+        <!-- 3. Servlet controller -->
         <dependency>
             <groupId>taglibs</groupId>
             <artifactId>standard</artifactId>

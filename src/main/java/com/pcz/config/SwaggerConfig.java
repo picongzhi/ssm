@@ -21,7 +21,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.pcz.web"))
+                .apis(RequestHandlerSelectors.basePackage("com.pcz.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

@@ -1,4 +1,4 @@
-package com.pcz.web;
+package com.pcz.controller;
 
 import com.pcz.dto.AppointExecution;
 import com.pcz.dto.Result;
