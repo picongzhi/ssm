@@ -44,6 +44,11 @@
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="com.pcz.dao"/>
+        <property name="basePackage" value="com.pcz.mapper"/>
+    </bean>
+
+    <!-- 5. 配置通用mapper -->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.pcz.mapper"/>
     </bean>
 </beans>

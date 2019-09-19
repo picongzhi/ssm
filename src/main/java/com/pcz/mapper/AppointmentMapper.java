@@ -1,12 +1,15 @@
-package com.pcz.dao;
+package com.pcz.mapper;
 
 import com.pcz.entity.Appointment;
+import com.pcz.entity.Book;
 import org.apache.ibatis.annotations.Param;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
  * @author picongzhi
  */
-public interface AppointmentDao {
+public interface AppointmentMapper extends Mapper<Book>, MySqlMapper<Book> {
     /**
      * 插入预约图书记录
      * @param bookId bookId

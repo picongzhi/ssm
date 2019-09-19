@@ -1,14 +1,16 @@
-package com.pcz.dao;
+package com.pcz.mapper;
 
 import com.pcz.entity.Book;
 import org.apache.ibatis.annotations.Param;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 import java.util.List;
 
 /**
  * @author picongzhi
  */
-public interface BookDao {
+public interface BookMapper extends Mapper<Book>, MySqlMapper<Book> {
     /**
      * 通过ID查询单本图书
      * @param id ID

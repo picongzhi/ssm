@@ -15,7 +15,7 @@
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <!-- 匹配SpringMVC需要加载的配置文件
-            spring-dao.xml, spring-service.xml, spring-controller.xml
+            spring-mapper.xml, spring-service.xml, spring-controller.xml
             MyBatis -> spring -> springmvc
          -->
         <!--<init-param>-->

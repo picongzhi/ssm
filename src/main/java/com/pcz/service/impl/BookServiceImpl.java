@@ -1,7 +1,7 @@
 package com.pcz.service.impl;
 
-import com.pcz.dao.AppointmentDao;
-import com.pcz.dao.BookDao;
+import com.pcz.mapper.AppointmentMapper;
+import com.pcz.mapper.BookMapper;
 import com.pcz.dto.AppointExecution;
 import com.pcz.entity.Appointment;
 import com.pcz.entity.Book;
@@ -26,19 +26,19 @@ public class BookServiceImpl implements BookService {
     private Logger logger = LoggerFactory.getLogger(BookServiceImpl.class);
 
     @Resource
-    private BookDao bookDao;
+    private BookMapper bookMapper;
 
     @Resource
-    private AppointmentDao appointmentDao;
+    private AppointmentMapper appointmentMapper;
 
     @Override
     public Book getById(long bookId) {
-        return bookDao.queryById(bookId);
+        return bookMapper.queryById(bookId);
     }
 
     @Override
     public List<Book> getList() {
-        return bookDao.queryAll(0, 1000);
+        return bookMapper.queryAll(0, 1000);
     }
 
     /**
@@ -51,15 +51,15 @@ public class BookServiceImpl implements BookService {
     @Override
     public AppointExecution appoint(long bookId, long studentId) {
         try {
-            int updated = bookDao.reduceNumber(bookId);
+            int updated = bookMapper.reduceNumber(bookId);
             if (updated <= 0) {
                 throw new NoNumberException("no number");
             } else {
-                int inserted = appointmentDao.insertAppointment(bookId, studentId);
+                int inserted = appointmentMapper.insertAppointment(bookId, studentId);
                 if (inserted <= 0) {
                     throw new RepeatException("repeat appoint");
                 } else {
-                    Appointment appointment = appointmentDao.queryByKeyWithBook(bookId, studentId);
+                    Appointment appointment = appointmentMapper.queryByKeyWithBook(bookId, studentId);
                     return new AppointExecution(bookId, AppointStateEnum.SUCCESS, appointment);
                 }
             }
