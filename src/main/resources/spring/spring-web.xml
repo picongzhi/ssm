@@ -53,4 +53,5 @@
     </bean>
 
     <bean class="com.pcz.config.SwaggerConfig"/>
+    <bean class="com.pcz.config.TaskConfig"/>
 </beans>
