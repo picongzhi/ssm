@@ -8,7 +8,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring/spring-*.xml</param-value>
+        <param-value>classpath:spring/spring.xml</param-value>
     </context-param>
 
     <servlet>
@@ -18,10 +18,10 @@
             spring-mapper.xml, spring-service.xml, spring-controller.xml
             MyBatis -> spring -> springmvc
          -->
-        <!--<init-param>-->
-        <!--<param-name>contextConfigLocation</param-name>-->
-        <!--<param-value>classpath:spring/spring-*.xml</param-value>-->
-        <!--</init-param>-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/spring-mvc.xml</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>
